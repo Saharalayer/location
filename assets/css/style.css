@@ -1,8 +1,8 @@
 :root {
   --bg: #fdfaf6;
   --text: #2c2c2c;
-  --primary: #c19a6b;
-  --secondary: #00695c;
+  --primary: #c19a6b;     /* لون ذهبي رملي */
+  --secondary: #00695c;   /* أخضر واحات */
   --muted: #757575;
   --border: #e0e0e0;
 }
@@ -70,14 +70,28 @@ h2 { color: var(--secondary); margin-bottom: 20px; }
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 12px 20px;
+  padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  margin: 6px 4px 0 0;
   transition: .2s;
 }
-.btn-primary { background: var(--secondary); color: #fff; }
-.btn-primary:hover { background: #004d40; }
+.btn-primary {
+  background: var(--secondary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #004d40;
+}
+.btn-outline {
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+.btn-outline:hover {
+  background: var(--secondary);
+  color: #fff;
+}
 
 /* Form */
 .contact-form { display: grid; gap: 12px; max-width: 500px; }
@@ -89,4 +103,29 @@ input, textarea {
 }
 textarea { resize: none; }
 
-/*
+/* Footer */
+.site-footer {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive */
+@media (max-width:768px) {
+  .nav-toggle { 
+    display: block; 
+    background:none; 
+    border:none; 
+    color:#fff; 
+    font-size:1.5rem; 
+  }
+  .nav-list { 
+    display: none; 
+    flex-direction: column; 
+    gap: 10px; 
+    background: var(--primary); 
+    padding: 10px; 
+  }
+  .nav[aria-expanded="true"] .nav-list { display: flex; }
+}
