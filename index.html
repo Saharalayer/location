@@ -9,11 +9,13 @@
 </head>
 <body>
 
+  <!-- Header -->
   <header class="site-header">
-    <div class="container">
-      <h1>مكتب كراء السيارات والشقق - العيون</h1>
-      <nav>
-        <ul>
+    <div class="container flex-between">
+      <a href="/" class="logo">LOCATION</a>
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="فتح القائمة">☰</button>
+        <ul class="nav-list">
           <li><a href="/">الرئيسية</a></li>
           <li><a href="pages/about.html">من نحن</a></li>
           <li><a href="#cars">السيارات</a></li>
@@ -24,38 +26,82 @@
     </div>
   </header>
 
-  <main>
-    <section id="hero">
-      <h2>كراء سيارات حديثة وشقق مفروشة بمدينة العيون</h2>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>كراء سيارات حديثة وشقق مفروشة بمدينة العيون</h1>
       <p>نوفر لك الراحة والسهولة أثناء إقامتك أو سفرك.</p>
-    </section>
+      <a href="#cars" class="btn btn-primary">اكتشف السيارات</a>
+    </div>
+  </section>
 
-    <section id="cars">
+  <!-- Cars -->
+  <section id="cars" class="section">
+    <div class="container">
       <h2>السيارات المتوفرة</h2>
       <div class="grid">
         <article class="card">
           <img src="assets/img/car1.jpg" alt="سيارة اقتصادية">
-          <h3>سيارة اقتصادية</h3>
-          <p>مثالية للتنقل داخل المدينة.</p>
+          <div class="card-body">
+            <h3>سيارة اقتصادية</h3>
+            <p>مثالية للتنقل داخل المدينة.</p>
+          </div>
         </article>
         <article class="card">
           <img src="assets/img/car2.jpg" alt="سيارة فاخرة">
-          <h3>سيارة فاخرة</h3>
-          <p>لرحلات مميزة ومريحة.</p>
+          <div class="card-body">
+            <h3>سيارة فاخرة</h3>
+            <p>لرحلات مميزة ومريحة.</p>
+          </div>
         </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="apartments">
+  <!-- Apartments -->
+  <section id="apartments" class="section alt-bg">
+    <div class="container">
       <h2>الشقق المفروشة</h2>
       <div class="grid">
         <article class="card">
           <img src="assets/img/apartment1.jpg" alt="شقة وسط المدينة">
-          <h3>شقة وسط المدينة</h3>
-          <p>قريبة من جميع الخدمات.</p>
+          <div class="card-body">
+            <h3>شقة وسط المدينة</h3>
+            <p>قريبة من جميع الخدمات.</p>
+          </div>
         </article>
         <article class="card">
           <img src="assets/img/apartment2.jpg" alt="شقة مطلة على البحر">
-          <h3>شقة مطلة على البحر</h3>
-          <p>إطلالة رائعة وراحة تامة.</p>
-       
+          <div class="card-body">
+            <h3>شقة مطلة على البحر</h3>
+            <p>إطلالة رائعة وراحة تامة.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>تواصل معنا</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="الاسم" required>
+        <input type="tel" placeholder="الهاتف" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <textarea placeholder="رسالتك" rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary">إرسال</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 مكتب كراء السيارات والشقق المفروشة - العيون</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
