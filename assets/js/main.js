@@ -1,28 +1,23 @@
-// ملف جافاسكريبت لموقع location
-// كراء السيارات والشقق المفروشة بمدينة العيون
+// Toggle navigation menu on mobile
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("موقع location جاهز للعمل!");
-
-  // تمرير سلس للروابط الداخلية
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-      const targetId = link.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        e.preventDefault();
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  // مثال: رسالة تنبيه عند إرسال النموذج
-  const form = document.querySelector('form');
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      alert("تم إرسال رسالتك بنجاح! سنتواصل معك قريبًا.");
-      form.reset();
+  if (navToggle) {
+    navToggle.addEventListener("click", () => {
+      const expanded = nav.getAttribute("aria-expanded") === "true";
+      nav.setAttribute("aria-expanded", !expanded);
     });
   }
+});
+
+// Optional: Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
 });
