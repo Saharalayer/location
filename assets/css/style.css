@@ -1,3 +1,6 @@
+/* استدعاء خط Cairo من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
 :root {
   --bg: #fdfdfd;
   --text: #2c2c2c;
@@ -10,7 +13,7 @@
 
 body {
   margin: 0;
-  font-family: "Noto Naskh Arabic", sans-serif;
+  font-family: "Cairo", "Noto Naskh Arabic", sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.8;
@@ -49,13 +52,13 @@ body {
   justify-content: center;
   text-align: center;
 }
-.hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 12px; font-weight: 700; }
 .hero p { font-size: 1.2rem; margin-bottom: 20px; }
 
 /* Sections */
 .section { padding: 60px 20px; }
 .alt-bg { background: #fafafa; }
-h2 { color: var(--secondary); margin-bottom: 20px; }
+h2 { color: var(--secondary); margin-bottom: 20px; font-weight: 700; }
 
 /* Grid & Cards */
 .grid {
@@ -69,7 +72,10 @@ h2 { color: var(--secondary); margin-bottom: 20px; }
   overflow: hidden;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform .2s, box-shadow .2s;
+  transition: transform .3s, box-shadow .3s;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
 }
 .card:hover { 
   transform: translateY(-5px); 
@@ -77,8 +83,14 @@ h2 { color: var(--secondary); margin-bottom: 20px; }
 }
 .card img { width: 100%; height: 200px; object-fit: cover; }
 .card-body { padding: 16px; }
-.card-body h3 { margin: 0 0 8px; }
+.card-body h3 { margin: 0 0 8px; font-weight: 600; }
 .card-actions { margin-top: 12px; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* Buttons */
 .btn {
@@ -112,7 +124,7 @@ input, textarea {
   padding: 12px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  font-family: inherit;
+  font-family: "Cairo", sans-serif;
 }
 textarea { resize: none; }
 
@@ -122,6 +134,7 @@ textarea { resize: none; }
   color: #fff;
   text-align: center;
   padding: 20px;
+  font-weight: 600;
 }
 
 /* Responsive */
