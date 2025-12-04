@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
       navToggle.textContent = "☰";
     });
   });
+
+  // إغلاق القائمة عند الضغط على الخلفية (Blur overlay)
+  nav.addEventListener("click", (e) => {
+    if (e.target === nav) {
+      nav.setAttribute("aria-expanded", false);
+      navToggle.textContent = "☰";
+    }
+  });
 });
 
 // Smooth scroll for anchor links
