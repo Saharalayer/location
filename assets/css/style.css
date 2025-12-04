@@ -175,13 +175,14 @@ textarea { resize: none; }
     height: 100%;
     background: #fff;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start; /* تبدأ من الأعلى */
+    align-items: flex-start;
     gap: 20px;
-    padding: 40px 20px;
+    padding: 60px 20px; /* مسافة أسفل الهيدر */
     box-shadow: -4px 0 12px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
     z-index: 1000;
+    overflow-y: auto; /* يسمح بالتمرير إذا القائمة طويلة */
   }
 
   .nav[aria-expanded="true"] .nav-list { 
@@ -189,13 +190,15 @@ textarea { resize: none; }
   }
 
   .nav-list a {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--secondary);
+    width: 100%;
+    display: block;
   }
 
   .lang-switch {
-    margin-top: 40px;
+    margin-top: auto; /* يظهر في الأسفل */
     font-size: 1.1rem;
     font-weight: bold;
   }
