@@ -45,7 +45,7 @@ body {
 /* Hero */
 .hero {
   position: relative;
-  height: 45vh; /* ارتفاع صغير بدل 100vh */
+  height: 250px; /* ارتفاع ثابت وصغير */
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
   display: flex;
@@ -60,20 +60,21 @@ body {
 }
 
 .hero h1 {
-  font-size: 1.6rem; /* أصغر */
+  font-size: 1.4rem; /* أصغر */
   margin-bottom: 8px;
   font-weight: 700;
 }
 
 .hero p {
   font-size: 0.9rem; /* أصغر */
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .hero .btn {
-  padding: 8px 14px;
-  font-size: 0.9rem;
+  padding: 6px 12px;
+  font-size: 0.85rem;
 }
+
 
 
 /* Sections */
