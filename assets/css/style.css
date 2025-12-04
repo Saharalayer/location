@@ -184,3 +184,50 @@ textarea { resize: none; }
   .hero h1 { font-size: 1.8rem; }
   .hero p { font-size: 1rem; }
 }
+@media (max-width:768px) {
+  .nav-toggle { 
+    display: block; 
+    background:none; 
+    border:none; 
+    color: var(--secondary); 
+    font-size: 1.8rem; 
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .nav-list { 
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%; /* عرض مناسب */
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav[aria-expanded="true"] .nav-list { 
+    right: 0; 
+  }
+
+  .nav-list a {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--secondary);
+  }
+
+  .lang-switch {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 1rem; }
+}
