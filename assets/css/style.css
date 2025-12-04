@@ -137,7 +137,7 @@ textarea { resize: none; }
   font-weight: 600;
 }
 
-/* Responsive - Full Screen Menu */
+/* Responsive - Mobile Menu with Blur Slide-in */
 @media (max-width:768px) {
   .nav-toggle { 
     display: block; 
@@ -149,57 +149,29 @@ textarea { resize: none; }
     z-index: 1100;
   }
 
-  .nav-list { 
+  /* خلفية تغبيش عند فتح القائمة */
+  .nav::before {
+    content: "";
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.95);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    transition: right 0.3s ease;
-    z-index: 1000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 900;
   }
-
-  .nav[aria-expanded="true"] .nav-list { 
-    right: 0; 
-  }
-
-  .nav-list a {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--secondary);
-  }
-
-  .lang-switch {
-    margin-top: 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-
-  .hero h1 { font-size: 1.8rem; }
-  .hero p { font-size: 1rem; }
-}
-@media (max-width:768px) {
-  .nav-toggle { 
-    display: block; 
-    background:none; 
-    border:none; 
-    color: var(--secondary); 
-    font-size: 1.8rem; 
-    cursor: pointer;
-    z-index: 1100;
+  .nav[aria-expanded="true"]::before {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-list { 
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%; /* عرض مناسب */
+    width: 70%;
     height: 100%;
     background: #fff;
     flex-direction: column;
